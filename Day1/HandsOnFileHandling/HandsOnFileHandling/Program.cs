@@ -16,13 +16,23 @@ namespace HandsOnFileHandling
                 Console.WriteLine(content);
             }
         }
+        public static void Write(string path,string content)
+        {
+            using(StreamWriter sw=new StreamWriter(path,true))
+            {
+                sw.WriteLine(content);
+            }
+        }
         static void Main(string[] args)
         {
            try
             {
                 Console.WriteLine("Enter Path");
                 string path = Console.ReadLine();
-                Read(path);
+                Console.WriteLine("Enter Content");
+                string content = Console.ReadLine();
+                Write(path, content);
+              //  Read(path);
             }
             catch(IOException ex)
             {
