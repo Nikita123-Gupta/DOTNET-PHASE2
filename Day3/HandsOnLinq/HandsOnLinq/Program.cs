@@ -17,6 +17,10 @@ namespace HandsOnLinq
             var res1 = from i in a
                        where i % 2 != 0 && i > 50
                        select i;
+            var res2 = from i in a
+                       where i > 40
+                       orderby i ascending
+                       select i;
             foreach (var k in res1)
                 Console.WriteLine(k);
 
