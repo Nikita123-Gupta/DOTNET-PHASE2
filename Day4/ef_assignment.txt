@@ -2,8 +2,7 @@ Create entityCustomer(Cid,Cname,EmailId,MobileNo,City)
 Create MVC Core App and do all CRUD operations wrt to Customer using Entity Framework Core.
 Note:use code-first approch in EF core
 
-Node and NPM and Angular CLI
-Visual Studio Code
+
 
 Steps to work with EF Code First
 
