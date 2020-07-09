@@ -14,5 +14,7 @@ namespace HandsOnEFCodeFirst.Entities
         public string Pname { get; set; }
         public int? Price { get; set; }
         public int? Stock { get; set; }
+        //Navigation Prop
+        public ICollection<Order> Orders { get; set; }
     }
 }

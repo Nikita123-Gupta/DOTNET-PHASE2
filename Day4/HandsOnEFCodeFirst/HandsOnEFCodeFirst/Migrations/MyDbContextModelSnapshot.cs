@@ -19,6 +19,25 @@ namespace HandsOnEFCodeFirst.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("HandsOnEFCodeFirst.Entities.Order", b =>
+                {
+                    b.Property<string>("OId")
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Pid")
+                        .HasColumnType("int");
+
+                    b.HasKey("OId");
+
+                    b.HasIndex("Pid");
+
+                    b.ToTable("Order");
+                });
+
             modelBuilder.Entity("HandsOnEFCodeFirst.Entities.Product", b =>
                 {
                     b.Property<int>("Pid")
@@ -40,6 +59,15 @@ namespace HandsOnEFCodeFirst.Migrations
                     b.HasKey("Pid");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("HandsOnEFCodeFirst.Entities.Order", b =>
+                {
+                    b.HasOne("HandsOnEFCodeFirst.Entities.Product", "Product")
+                        .WithMany("Orders")
+                        .HasForeignKey("Pid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
