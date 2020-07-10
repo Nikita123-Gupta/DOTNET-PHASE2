@@ -16,6 +16,6 @@ namespace HandsOnMVCUsingEFCodeFirst.Entities
         [Required]
         public string Ename { get; set; }
         public DateTime? JoinDate { get; set; }
-        public double? Salary { get; set; }
+        public int? Salary { get; set; }
     }
 }

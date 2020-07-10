@@ -33,8 +33,8 @@ namespace HandsOnMVCUsingEFCodeFirst.Migrations
                     b.Property<DateTime?>("JoinDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double?>("Salary")
-                        .HasColumnType("float");
+                    b.Property<int?>("Salary")
+                        .HasColumnType("int");
 
                     b.HasKey("Eid");
 
